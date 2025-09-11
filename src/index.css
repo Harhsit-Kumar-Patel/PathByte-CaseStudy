@@ -760,68 +760,103 @@
     
     /* Force padding on ALL sections */
     section {
-      padding-left: 32px !important;
-      padding-right: 32px !important;
-      padding-top: 24px !important;
-      padding-bottom: 24px !important;
+      padding-left: 48px !important;
+      padding-right: 48px !important;
+      padding-top: 32px !important;
+      padding-bottom: 32px !important;
     }
     
     /* Force padding on ALL containers */
     .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
-      padding-left: 32px !important;
-      padding-right: 32px !important;
+      padding-left: 48px !important;
+      padding-right: 48px !important;
     }
     
     /* Force padding on ALL divs with max-width */
     div[class*="max-w-"] {
-      padding-left: 32px !important;
-      padding-right: 32px !important;
+      padding-left: 48px !important;
+      padding-right: 48px !important;
     }
     
     /* Force padding on ALL mx-auto containers */
     .mx-auto {
-      padding-left: 32px !important;
-      padding-right: 32px !important;
+      padding-left: 48px !important;
+      padding-right: 48px !important;
     }
     
     /* Force padding on ALL text elements */
     p, h1, h2, h3, h4, h5, h6, span {
-      padding-left: 16px !important;
-      padding-right: 16px !important;
+      padding-left: 24px !important;
+      padding-right: 24px !important;
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
     
     /* Force padding on ALL flex containers */
     .flex {
-      padding-left: 24px !important;
-      padding-right: 24px !important;
-    }
-    
-    /* Force padding on ALL glass cards */
-    .glass-card, .glass-card-premium, .glass-card-soft {
-      padding: 20px !important;
-      margin: 8px !important;
-    }
-    
-    /* Special override for hero section */
-    #hero {
       padding-left: 32px !important;
       padding-right: 32px !important;
     }
     
+    /* Force padding on ALL glass cards */
+    .glass-card, .glass-card-premium, .glass-card-soft {
+      padding: 24px !important;
+      margin: 12px !important;
+    }
+    
+    /* Special override for hero section */
+    #hero {
+      padding-left: 48px !important;
+      padding-right: 48px !important;
+    }
+    
     /* Force padding on hero content */
     #hero * {
-      padding-left: 16px !important;
-      padding-right: 16px !important;
+      padding-left: 24px !important;
+      padding-right: 24px !important;
     }
     
     /* Prevent text from touching edges */
     #hero p, #hero h1, #hero h2, #hero h3 {
       margin-left: 0 !important;
       margin-right: 0 !important;
-      padding-left: 20px !important;
-      padding-right: 20px !important;
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+    }
+    
+    /* CRITICAL: Fix text wrapping and prevent vertical stacking */
+    * {
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      hyphens: auto !important;
+      max-width: 100% !important;
+      white-space: normal !important;
+    }
+    
+    /* Force all text to stay on single lines when possible */
+    h1, h2, h3, h4, h5, h6, p, span, div {
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+    
+    /* Allow text wrapping only for long paragraphs */
+    p {
+      white-space: normal !important;
+      overflow: visible !important;
+      text-overflow: unset !important;
+    }
+    
+    /* Force proper spacing for progress bars and percentages */
+    .progress-bar, [class*="progress"], [class*="bar"] {
+      margin-right: 24px !important;
+      padding-right: 24px !important;
+    }
+    
+    /* Force proper spacing for percentage displays */
+    [class*="percent"], [class*="%"] {
+      margin-right: 24px !important;
+      padding-right: 24px !important;
     }
   }
 
@@ -943,6 +978,44 @@
     .glass-card, .glass-card-premium {
       padding: 20px !important;
       margin: 8px !important;
+    }
+  }
+
+  /* CRITICAL: Fix Text Wrapping Issues - Prevent Vertical Stacking */
+  @media (max-width: 768px) {
+    /* Force all text to prevent vertical stacking */
+    * {
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      hyphens: auto !important;
+      max-width: 100% !important;
+    }
+    
+    /* Prevent text from breaking into individual characters */
+    h1, h2, h3, h4, h5, h6, p, span, div, label {
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      min-width: 0 !important;
+    }
+    
+    /* Allow proper text wrapping for paragraphs only */
+    p {
+      white-space: normal !important;
+      overflow: visible !important;
+      text-overflow: unset !important;
+    }
+    
+    /* Force proper spacing for progress bars and percentages */
+    .progress-bar, [class*="progress"], [class*="bar"], [class*="w-"] {
+      margin-right: 24px !important;
+      padding-right: 24px !important;
+    }
+    
+    /* Force proper spacing for percentage displays */
+    [class*="percent"], [class*="%"], [class*="text-"] {
+      margin-right: 24px !important;
+      padding-right: 24px !important;
     }
   }
 
@@ -1263,6 +1336,41 @@
 
   /* Extra small mobile devices */
   @media (max-width: 480px) {
+    /* CRITICAL: Fix text wrapping issues for very small screens */
+    * {
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      hyphens: auto !important;
+      max-width: 100% !important;
+    }
+    
+    /* Prevent text from breaking into individual characters on very small screens */
+    h1, h2, h3, h4, h5, h6, p, span, div, label {
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      min-width: 0 !important;
+    }
+    
+    /* Allow proper text wrapping for paragraphs only */
+    p {
+      white-space: normal !important;
+      overflow: visible !important;
+      text-overflow: unset !important;
+    }
+    
+    /* Force proper spacing for progress bars and percentages on very small screens */
+    .progress-bar, [class*="progress"], [class*="bar"], [class*="w-"] {
+      margin-right: 12px !important;
+      padding-right: 12px !important;
+    }
+    
+    /* Force proper spacing for percentage displays on very small screens */
+    [class*="percent"], [class*="%"], [class*="text-"] {
+      margin-right: 12px !important;
+      padding-right: 12px !important;
+    }
+    
     /* Even more conservative spacing for very small screens - Force with !important */
     .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
       padding-left: 20px !important;
