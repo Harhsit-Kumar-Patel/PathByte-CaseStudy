@@ -633,9 +633,24 @@
 
   /* Mobile Responsiveness Improvements */
   @media (max-width: 768px) {
-    /* Ensure proper spacing from screen edges */
+    /* Ensure proper spacing from screen edges - More aggressive padding */
     .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
-      @apply px-4 sm:px-6;
+      @apply px-6 sm:px-8;
+    }
+    
+    /* Force padding on all main content areas */
+    section {
+      @apply px-6 sm:px-8;
+    }
+    
+    /* Ensure hero section has proper padding */
+    #hero {
+      @apply px-6 sm:px-8;
+    }
+    
+    /* Force padding on all divs with max-width classes */
+    div[class*="max-w-"] {
+      @apply px-6 sm:px-8;
     }
     
     /* Improve text readability on mobile */
@@ -740,7 +755,22 @@
   @media (max-width: 480px) {
     /* Even more conservative spacing for very small screens */
     .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
-      @apply px-3;
+      @apply px-4;
+    }
+    
+    /* Force padding on all sections for very small screens */
+    section {
+      @apply px-4;
+    }
+    
+    /* Ensure hero section has proper padding on very small screens */
+    #hero {
+      @apply px-4;
+    }
+    
+    /* Force padding on all divs with max-width classes for very small screens */
+    div[class*="max-w-"] {
+      @apply px-4;
     }
     
     /* Smaller text sizes for very small screens */
