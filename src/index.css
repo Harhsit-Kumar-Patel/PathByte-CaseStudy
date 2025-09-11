@@ -631,12 +631,86 @@
     @apply transform scale-102 shadow-lg shadow-purple-500/20;
   }
 
+  /* Portrait Mobile Optimization - Most Aggressive */
+  @media (max-width: 768px) and (orientation: portrait) {
+    /* Force proper spacing for ALL portrait mobile devices */
+    * {
+      box-sizing: border-box !important;
+    }
+    
+    /* Force padding on ALL sections */
+    section {
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+      padding-top: 24px !important;
+      padding-bottom: 24px !important;
+    }
+    
+    /* Force padding on ALL containers */
+    .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+    }
+    
+    /* Force padding on ALL divs with max-width */
+    div[class*="max-w-"] {
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+    }
+    
+    /* Force padding on ALL mx-auto containers */
+    .mx-auto {
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+    }
+    
+    /* Force padding on ALL text elements */
+    p, h1, h2, h3, h4, h5, h6, span {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    
+    /* Force padding on ALL flex containers */
+    .flex {
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+    }
+    
+    /* Force padding on ALL glass cards */
+    .glass-card, .glass-card-premium, .glass-card-soft {
+      padding: 20px !important;
+      margin: 8px !important;
+    }
+    
+    /* Special override for hero section */
+    #hero {
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+    }
+    
+    /* Force padding on hero content */
+    #hero * {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+    
+    /* Prevent text from touching edges */
+    #hero p, #hero h1, #hero h2, #hero h3 {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+  }
+
   /* 9:16 Aspect Ratio Optimization (Portrait Mobile) */
   @media (max-width: 768px) and (aspect-ratio: 9/16) {
     /* Optimize for 9:16 portrait mobile devices */
     section {
-      padding-left: 24px !important;
-      padding-right: 24px !important;
+      padding-left: 32px !important;
+      padding-right: 32px !important;
       padding-top: 24px !important;
       padding-bottom: 24px !important;
     }
@@ -915,6 +989,47 @@
     
     .text-gray-400 {
       @apply text-gray-300; /* Better contrast on mobile */
+    }
+  }
+
+  /* Small Portrait Mobile - Extra Aggressive */
+  @media (max-width: 480px) and (orientation: portrait) {
+    /* Force proper spacing for small portrait devices */
+    section {
+      padding-left: 28px !important;
+      padding-right: 28px !important;
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+    
+    .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
+      padding-left: 28px !important;
+      padding-right: 28px !important;
+    }
+    
+    div[class*="max-w-"] {
+      padding-left: 28px !important;
+      padding-right: 28px !important;
+    }
+    
+    .mx-auto {
+      padding-left: 28px !important;
+      padding-right: 28px !important;
+    }
+    
+    p, h1, h2, h3, h4, h5, h6, span {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
+    
+    .flex {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+    
+    .glass-card, .glass-card-premium, .glass-card-soft {
+      padding: 16px !important;
+      margin: 6px !important;
     }
   }
 
