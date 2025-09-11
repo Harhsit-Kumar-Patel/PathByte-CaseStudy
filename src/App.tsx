@@ -24,7 +24,7 @@ const App: React.FC = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden pt-16">
+      <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden pt-16 sm:pt-20">
         {/* Modern Animated Background */}
         <motion.div 
           className="absolute inset-0"
@@ -84,7 +84,7 @@ const App: React.FC = () => {
           </div>
         </motion.div>
         
-        <div className="relative z-10 text-center max-w-6xl mx-auto">
+        <div className="relative z-10 text-center max-w-6xl mx-auto px-2 sm:px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ const App: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-2"
           >
             <MicroInteraction type="hover-lift" intensity="subtle">
               <motion.a 

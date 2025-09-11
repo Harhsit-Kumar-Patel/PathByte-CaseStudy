@@ -21,6 +21,9 @@
     color: #ffffff;
     overflow-x: hidden;
     min-height: 100vh;
+    /* Mobile-specific improvements */
+    padding: 0;
+    box-sizing: border-box;
   }
 
   code {
@@ -626,5 +629,188 @@
 
   .btn-modern:hover {
     @apply transform scale-102 shadow-lg shadow-purple-500/20;
+  }
+
+  /* Mobile Responsiveness Improvements */
+  @media (max-width: 768px) {
+    /* Ensure proper spacing from screen edges */
+    .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
+      @apply px-4 sm:px-6;
+    }
+    
+    /* Improve text readability on mobile */
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    /* Better mobile typography */
+    h1 {
+      @apply text-4xl sm:text-5xl md:text-6xl;
+      line-height: 1.1;
+    }
+    
+    h2 {
+      @apply text-3xl sm:text-4xl md:text-5xl;
+      line-height: 1.2;
+    }
+    
+    h3 {
+      @apply text-2xl sm:text-3xl;
+      line-height: 1.3;
+    }
+    
+    /* Improve button spacing and sizing */
+    .btn-animated, .glass-card, .glass-card-premium {
+      @apply px-4 py-3 sm:px-6 sm:py-4;
+      min-height: 44px; /* iOS touch target minimum */
+    }
+    
+    /* Better mobile navigation */
+    .navbar {
+      @apply px-4;
+    }
+    
+    /* Improve mobile section spacing */
+    section {
+      @apply py-12 sm:py-16 md:py-20 lg:py-24;
+    }
+    
+    /* Better mobile grid layouts */
+    .grid {
+      @apply gap-4 sm:gap-6 md:gap-8;
+    }
+    
+    /* Improve mobile card spacing */
+    .glass-card, .glass-card-premium, .glass-card-soft {
+      @apply p-4 sm:p-6 md:p-8;
+      margin: 0 4px; /* Small margin from screen edges */
+    }
+    
+    /* Better mobile text spacing */
+    p {
+      @apply text-base sm:text-lg;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    
+    /* Improve mobile button groups */
+    .flex.flex-col.sm\\:flex-row {
+      @apply gap-3 sm:gap-4;
+    }
+    
+    /* Better mobile form elements */
+    input, textarea, select {
+      @apply text-base; /* Prevents zoom on iOS */
+      min-height: 44px;
+    }
+    
+    /* Improve mobile image responsiveness */
+    img {
+      @apply max-w-full h-auto;
+    }
+    
+    /* Better mobile scroll behavior */
+    html {
+      scroll-padding-top: 60px; /* Account for mobile navbar */
+    }
+    
+    /* Improve mobile touch targets */
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Better mobile spacing for hero sections */
+    .hero-section {
+      @apply px-4 py-16 sm:py-20 md:py-24;
+    }
+    
+    /* Improve mobile text contrast */
+    .text-gray-300 {
+      @apply text-gray-200; /* Better contrast on mobile */
+    }
+    
+    .text-gray-400 {
+      @apply text-gray-300; /* Better contrast on mobile */
+    }
+  }
+
+  /* Extra small mobile devices */
+  @media (max-width: 480px) {
+    /* Even more conservative spacing for very small screens */
+    .container, .max-w-7xl, .max-w-6xl, .max-w-5xl, .max-w-4xl, .max-w-3xl {
+      @apply px-3;
+    }
+    
+    /* Smaller text sizes for very small screens */
+    h1 {
+      @apply text-3xl sm:text-4xl;
+    }
+    
+    h2 {
+      @apply text-2xl sm:text-3xl;
+    }
+    
+    /* Tighter spacing for very small screens */
+    section {
+      @apply py-8 sm:py-12;
+    }
+    
+    .glass-card, .glass-card-premium, .glass-card-soft {
+      @apply p-3 sm:p-4;
+      margin: 0 2px;
+    }
+    
+    /* Better button sizing for very small screens */
+    .btn-animated, .glass-card, .glass-card-premium {
+      @apply px-3 py-2 sm:px-4 sm:py-3;
+    }
+  }
+
+  /* Mobile landscape orientation */
+  @media (max-width: 768px) and (orientation: landscape) {
+    /* Adjust spacing for landscape mobile */
+    section {
+      @apply py-8 sm:py-12;
+    }
+    
+    .hero-section {
+      @apply py-12 sm:py-16;
+    }
+  }
+
+  /* High DPI mobile devices */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Ensure crisp rendering on high DPI screens */
+    .glass-card, .glass-card-premium {
+      @apply border border-white/20; /* Slightly more visible borders */
+    }
+  }
+
+  /* Dark mode mobile improvements */
+  @media (prefers-color-scheme: dark) and (max-width: 768px) {
+    /* Better contrast for dark mode on mobile */
+    .text-gray-300 {
+      @apply text-gray-100;
+    }
+    
+    .text-gray-400 {
+      @apply text-gray-200;
+    }
+  }
+
+  /* Mobile accessibility improvements */
+  @media (max-width: 768px) {
+    /* Better focus indicators for mobile */
+    .focus-visible {
+      @apply outline-none ring-4 ring-blue-500 ring-offset-2 ring-offset-gray-900;
+    }
+    
+    /* Improve touch feedback */
+    button:active, a:active, [role="button"]:active {
+      @apply scale-95;
+      transition: transform 0.1s ease-out;
+    }
   }
 }
