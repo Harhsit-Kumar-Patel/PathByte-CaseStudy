@@ -4,7 +4,7 @@ import { BookOpen, Target, Zap } from 'lucide-react';
 
 const Overview: React.FC = () => {
   return (
-    <section className="py-24 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-gray-900/20 via-black/10 to-gray-900/20">
+    <section className="py-16 sm:py-20 md:py-24 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-gray-900/20 via-black/10 to-gray-900/20">
       <div className="max-w-7xl mx-auto px-2 sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -25,7 +25,7 @@ const Overview: React.FC = () => {
             </span>
           </motion.div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 display-font gradient-text">Overview</h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 sm:px-6 md:px-8">
             PathByte is a comprehensive web platform designed to bridge the gap between ambition and execution for students 
             aspiring to build careers in technology. By providing structured roadmaps and curated learning materials, 
             PathByte ensures students can focus on learning rather than wasting time searching for the right resources.
