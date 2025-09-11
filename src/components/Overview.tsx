@@ -4,8 +4,8 @@ import { BookOpen, Target, Zap } from 'lucide-react';
 
 const Overview: React.FC = () => {
   return (
-    <section className="py-16 sm:py-20 md:py-24 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-gray-900/20 via-black/10 to-gray-900/20">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4">
+    <section className="py-20 sm:py-24 md:py-32 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 bg-gradient-to-br from-gray-900/20 via-black/10 to-gray-900/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,8 +24,8 @@ const Overview: React.FC = () => {
               Project Overview
             </span>
           </motion.div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 display-font gradient-text">Overview</h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4 sm:px-6 md:px-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 display-font gradient-text">Overview</h2>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed px-6 sm:px-8 md:px-12 lg:px-16">
             PathByte is a comprehensive web platform designed to bridge the gap between ambition and execution for students 
             aspiring to build careers in technology. By providing structured roadmaps and curated learning materials, 
             PathByte ensures students can focus on learning rather than wasting time searching for the right resources.
@@ -49,7 +49,7 @@ const Overview: React.FC = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12 lg:gap-16">
           {[
             { 
               icon: Target, 
@@ -78,16 +78,16 @@ const Overview: React.FC = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="glass-card-premium p-4 sm:p-6 md:p-8 rounded-3xl text-center micro-hover h-full">
+              <div className="glass-card-premium p-6 sm:p-8 md:p-12 lg:p-16 rounded-3xl text-center micro-hover h-full">
                 <motion.div
-                  className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-4 sm:mb-6 rounded-2xl bg-gradient-to-r ${stat.color} flex items-center justify-center`}
+                  className={`w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-6 sm:mb-8 md:mb-10 rounded-2xl bg-gradient-to-r ${stat.color} flex items-center justify-center`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <stat.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
+                  <stat.icon className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" />
                 </motion.div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-white group-hover:gradient-text transition-all duration-300">{stat.title}</h3>
-                <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{stat.desc}</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-white group-hover:gradient-text transition-all duration-300">{stat.title}</h3>
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 leading-relaxed">{stat.desc}</p>
               </div>
             </motion.div>
           ))}
